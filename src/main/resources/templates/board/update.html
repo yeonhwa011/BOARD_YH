@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta charset="UTF-8">
     <title>글 수정</title>
 </head>
 <body>
 <h1>글 수정</h1>
-<form method="post" autocomplete="off" th:object="${post}" th:action="@{/board/update}">
+<form method="post" autocomplete="off" th:object="${post}" th:action="@{/board/save}">
+    <input type="hidden" name="id" th:field="*{id}" />
     <dl>
         <dt>글 제목</dt>
         <dd>
@@ -17,11 +17,11 @@
     <dl>
         <dt>내용</dt>
         <dd>
-            <!--            <input type="text" name="content" th:field="*{content}">-->
+
             <textarea name="content" th:field="*{content}"></textarea>
         </dd>
     </dl>
-    <button type="submit">완료</button>
+    <button type="submit">수정완료</button>
 </form>
 </body>
 </html>

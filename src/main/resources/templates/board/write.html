@@ -6,7 +6,7 @@
     <title th:text="${post.id} != null ? '글 수정' : '글 쓰기'">글 쓰기</title>
 </head>
 <body>
-<!--<h1>글 쓰기</h1>-->
+
 <h1 th:text="${post.id} != null ? '글 수정' : '글 쓰기'">글 쓰기</h1>
 <form method="post" autocomplete="off" th:object="${post}" th:action="@{/board/save}">
     <dl>
@@ -18,7 +18,7 @@
     <dl>
         <dt>내용</dt>
         <dd>
-            <!--  <input type="text" name="content" th:field="*{content}">-->
+
             <textarea name="content" th:field="*{content}"></textarea>
         </dd>
     </dl>

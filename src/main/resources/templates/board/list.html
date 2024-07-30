@@ -22,6 +22,14 @@
         <td>
             <a th:href="@{/board/post/{id}(id=${post.id})}" th:text="${post.title}"></a>
         </td>
+        <td>
+            <a th:href="@{/board/update/{id}(id=${post.id})}">수정</a>
+            <form th:action="@{/board/delete/{id}(id=${post.id})}" method="post" style="display:inline;">
+                <input type="hidden" name="_method" value="delete" />
+                <button type="submit">삭제</button>
+            </form>
+
+        </td>
     </tr>
     </tbody>
 </table>
